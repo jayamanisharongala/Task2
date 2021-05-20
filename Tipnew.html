@@ -1,0 +1,82 @@
+<html>
+<title>Tip Calculator</title>
+<head>
+<script type="text/javascript">
+	function calculatetip()
+	{
+	var billamt=document.getElementById("demo").value;
+	var rate=document.getElementById("selectbox").value
+	var sharing=document.getElementById("demo1").value;
+	console.log(billamt,rate,sharing);
+	if(!billamt&&!isNaN(billamt))
+	{
+		alert("Entered value is invalid");
+	}
+	else
+	{
+		var TotalTip=(rate/100)*billamt;
+		var Total=parseInt(billamt)  +  parseInt(TotalTip);
+		var TotalBill=Total/sharing;
+		console.log(TotalTip,Total,TotalBill);
+		document.getElementById("demo2").value='$'+TotalTip;
+		document.getElementById("demo3").value='$'+Math.ceil(TotalBill);
+	
+	}
+}
+</script>
+</head>
+<body>
+<center>
+<h2>TIP CALCULATOR</h2>
+<p style="color: black;""font-size: 18px">How much was your bill?</p>
+<span>$      <input id="demo" placeholder="Bill Amount" type="number" style="
+    width: 161px;
+    height: 28px;
+    border: 2px solid black;
+"/></span>
+<p style="color: black;""font-size: 18px">How was your service?</p>
+<span><select id="selectbox" style="
+    width: 224px;
+    height: 61px;
+    border: 2px solid black;
+	font-size: 20px;
+"/>
+<option value=30>30%- OutStanding</option>
+<option value=20>20%-Good</option>
+<option value=15>15%-Ok</option>
+<option value=10>10%-Bad</option>
+<option value=5>5%-Terrible</option>
+</select>
+</span><br></br>
+<p style="color: black;""font-size: 18px">How many people are sharing the Bill?</p>
+<span>  <input id="demo1" placeholder="Number of People" type="number"style="
+    width: 161px;
+    height: 28px;
+    border: 2px solid black;
+"/>   people</span><br>
+</br>
+<button type="button" onclick="calculatetip()"style="
+
+    background-color: #dc3232;
+    width: 91px;
+    height: 33px;
+    border: 1px solid black;
+    color: white;
+    border-radius: 4px;">CALCULATE</button>
+<br>
+</br>
+<label for="displayvalue">TotalTip</label>
+<span><input id="demo2" placeholder="              " type="text" style="
+    width: 161px;
+    height: 28px;
+    border: 2px solid black;
+"/></span>
+<label for="displayvalue">TotalBill</label>
+<span><input id="demo3" placeholder="               " type="text"style="
+    width: 161px;
+    height: 28px;
+    border: 2px solid black;
+"/></span>
+</center>
+</body>
+</html>
